@@ -5,10 +5,18 @@
   export const uuid = $page.params.uuid;
 
   export function deleteItem() {
-    // TODO: Delete item to list
-    console.log(`Deleting ${uuid}`)
-    goto('/');
+    // request DELETE http://localhost:3000/{id}
 
+    const request = new XMLHttpRequest();
+    request.open("DELETE", "http://localhost:3000/" + uuid, true);
+    request.send();
+
+    request.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 204) {
+        console.log(this.responseText);
+        goto('/');
+      }
+    }
   }
 </script>
 
