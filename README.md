@@ -1,38 +1,39 @@
-# create-svelte
+# Todo-client
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a personal project to try SveteKit and Svelte. It is a simple todo app client that uses a REST API to store the data.
 
-## Creating a project
+## Backends
 
-If you're seeing this, you've probably already done this step. Congrats!
+I'm writing several backends to test the client with different languages and frameworks to learn them.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+Current backends available are:
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+- [todo-server-ts](https://github.com/mxmarchal/todo-server-ts) - A REST API written in Typescript
 
-## Developing
+Backends in progress:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- todo-server-go - A REST API written in Go
+- todo-server-rust - A REST API written in Rust
+- todo-server-java - A REST API written in Java
 
-```bash
-npm run dev
+## How to run
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+1. Clone the repo
+2. Run `npm install` (or `pnpm`) to install dependencies
+3. Run `npm run dev -- --open` to start the dev server
 
-## Building
+The app will be available at [localhost:5173](http://localhost:5173).
+The API URL is `http://localhost:3000/` by default. You cannont change it yet.
 
-To create a production version of your app:
+## API endpoints
 
-```bash
-npm run build
-```
+- `GET /` - Get all todos
+- `GET /:id` - Get a todo by id
+- `POST /` - Create a new todo
+- `PUT /:id` - Update a todo
+- `DELETE /:id` - Delete a todo
 
-You can preview the production build with `npm run preview`.
+## Good to know
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- This project is not meant to be used in production. It is a personal project to learn Svelte and SvelteKit.
+- Svelte seems pretty straightforward and easy to learn. I like it.
